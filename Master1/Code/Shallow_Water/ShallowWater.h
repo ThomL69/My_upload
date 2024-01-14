@@ -74,6 +74,7 @@ protected:
 
 public:
 
+    // Initialisation du plan de simulation
     void init(const int DIMX, const int DIMY)
     {
         m_quad = Mesh(GL_TRIANGLES);
@@ -136,6 +137,7 @@ public:
         }
     }
 
+    // Fonction appelée pour mettre a jour l'affichage de la simulation
     void computeOneStep(float dt)
     {
         Array2D vx_old = m_vX;
@@ -177,6 +179,7 @@ public:
         }
     }
 
+    // Mise a jour de la hauteur de l'eau
     void update_height(float dt)
     {
         int i, j;
@@ -194,6 +197,7 @@ public:
         }
     }
 
+    // Mise a jour de la velocite des vagues
     void update_velocity(float dt)
     {
         const float a = 9.81f;
@@ -212,6 +216,7 @@ public:
         }
     }
 
+    // Ajou des pertubations de l'eau avec une force
     void ShallowWater::addPerturbation(float x, float y, float power) {
         int p_x = (int)(x * m_vX.dimX());
         int p_y = (int)(y * m_vY.dimY());

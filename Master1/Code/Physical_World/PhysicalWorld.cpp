@@ -19,7 +19,7 @@ void PhysicalWorld::update(const float dt)
 	
 }
 
-
+// Fonction dessinant des spheres
 void PhysicalWorld::draw()
 {
 	int i;
@@ -30,7 +30,7 @@ void PhysicalWorld::draw()
 	}
 }
 
-
+// Application des collisions avec differentes particules
 void PhysicalWorld::collision(const Point& p, const float radius)
 {
 	int i;
